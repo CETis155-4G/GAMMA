@@ -1,0 +1,79 @@
+<!--datos necesarios del html-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="styles/style_form.css" type="text/css">
+        <title>Formulario Registro</title>
+    </head>
+    <body>
+        <!--campos para registrarse-->
+        <form action="insert.php" class="form-register" method="get"> 
+            <h4 style="text-align: center;">Formulario Registro</h4>
+            <input class="controls" type="text" name="apPaterno" id="apellidos" placeholder="Apellido paterno" required>
+            <input class="controls" type="text" name="apMaterno" id="apellidos" placeholder="Apellido materno" required>
+            <input class="controls" type="text" name="nombre" id="nombres" placeholder="Nombre" required>
+            <input class="controls" type="date" name="fecha_nac" id="fecha" placeholder="Fecha de nacimiento" required>
+            <select class="controls" type="text" name="estado" id="estado" placeholder="Estado"  required>
+                <!--estados-->
+                <option> Aguascalientes </option>
+                <option> Baja California </option>
+                <option> Baja California Sur </option>
+                <option> Campeche </option>
+                <option> Chiapas </option>
+                <option> Chihuahua </option>
+                <option>  Coahuila </option>
+                <option> Colima  </option>
+                <option> CDMX </option>
+                <option> Durango </option>
+                <option> Estado de Mexico </option>
+                <option> Guanajuato </option>
+                <option> Guerrero </option>
+                <option> Hidalgo </option>
+                <option>  Jalisco  </option>
+                <option>  Michoacán </option>
+                <option>  Morelos </option>
+                <option> Nayarit </option>
+                <option> Nuevo León </option>
+                <option>  Oaxaca  </option>
+                <option>  Puebla </option>
+                <option> Querétaro </option>
+                <option>  Quintana Roo</option>
+                <option>  San Luis Potosí  </option>
+                <option>  Sinaloa </option>
+                <option>   Sonora </option>
+                <option>  Tabasco </option>
+                <option> Tamaulipas </option>
+                <option> Tlaxcala  </option>
+                <option> Veracruz </option>
+                <option>  Yucatán </option>
+                <option> Zacatecas </option>
+            </select>
+            <!--municipios-->
+            <select class="controls" type="text" name="municipio" id="municipio" placeholder="Municipio"  required>
+                    <option>	Aguascalientes	</option>
+                    <option>	Calvillo	</option>
+                    <option>	Asientos	</option>
+                    <option>	Cosio	</option>
+                    <option>	Jesus Maria 	</option>
+                    <option>	Pabellon de Arteaga	</option>
+                    <option>	Rincon de Romos	</option>
+                    <option>	San Jose de Gracia	</option>
+                    <option>	Tepezala 	</option>
+                    <option>	El Llano 	</option>
+                    <option>	San Fransisco de los Romo	</option>
+            </select> <br><br>
+            <input class="controls" type="text" name="telefono" id="numero" placeholder="Numero telefonico" required>
+            <input class="controls" type="email" name="email" id="correo" placeholder="Correo" required>
+            <input class="controls" type="password" name="pswd" id="correo" placeholder="Contraseña" required>
+
+            <input class="botons" type="submit" name="" value="Ingresar" width="100px">
+
+            <!--link para ir a inciar sesion-->
+            <p style="text-align: center;"><a href="login.html">¿Ya cuentas con una cuenta?</a></p>
+        </form>
+    </body>
+</html>
