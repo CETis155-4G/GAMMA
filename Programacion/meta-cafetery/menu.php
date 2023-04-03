@@ -18,7 +18,7 @@
 
     <?php
         // Conectarse a la base de datos
-        $servername = "localhost:3307";
+        $servername = "localhost:4000";
         $username = "root";
         $password = "";
         $dbname = "sistema";
@@ -27,8 +27,17 @@
         // Verificar la conexión
         if (!$conn) {
             die("Conexión fallida: " . mysqli_connect_error());
+
         }
-        //echo "Conexión exitosa";
+        $sql = "SELECT rol from user where email= '$user' ;" ;
+
+        $data = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($data) > 0) {
+            while($rowData = mysqli_fetch_array($data)){
+                $rol = $rowData["rol"];
+            }
+        }
     ?>
 </head>    
 
@@ -66,7 +75,10 @@
 
     <section class="section-class-menu"> -MENU- </section>
     <br>
-    <!-- se usa para indicar que se cambia de tema o que es otra pagina   -->  
+    <!-- se usa para indicar que se cambia de tema o que es otra pagina   --> 
+    <?php
+    echo $rol;
+    ?>
 
         <!-- se usa para crear secciones independientes  -->
     <section class="section-class-alimentos">Alimentos</section>
@@ -83,9 +95,10 @@
                                 include 'articulo.php';
                             ?>
                         </p>
+                        <?php if($rol == 'Administrador' ){ ?>
                         <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
-                        </section>
+                        <?php }  ?></section>
                     </form>
                
                     <hr>
@@ -98,9 +111,10 @@
                                 include 'articulo.php';
                             ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
-                        </section>
+                        <?php }  ?></section>
                     </form>    
                     <hr>
             <IMG src="img/pizza.jpg" align="left" width="150" height="125"><br>
@@ -112,9 +126,10 @@
                                 include 'articulo.php';
                             ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
-                        </section>
+                        <?php }  ?></section>
                     </form>  
                     <hr>
             <br>
@@ -127,9 +142,10 @@
                                 include 'articulo.php';
                             ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
-                        </section>
+                        <?php }  ?></section>
                     </form>  
                     <hr>
             <IMG src="img/tacos.jpg" align="left" width="150" height="125" ><br>
@@ -141,9 +157,10 @@
                                 include 'articulo.php';
                                 ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
-                        </section>
+                        <?php }  ?></section>
                     </form>  
                     <hr>
                 <IMG src="img/pan.jpg" align="left" width="150" height="125" ><br>
@@ -155,9 +172,10 @@
                                 include 'articulo.php';
                                 ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
-                        </section>
+                        <?php }  ?></section>
                     </form>  
                     <hr>
 
@@ -171,9 +189,10 @@
                                 include 'articulo.php';
                                 ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
-                        </section>
+                        <?php }  ?></section>
                     </form>  
 
                     <hr>
@@ -186,9 +205,10 @@
                                 include 'articulo.php';
                                 ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
-                        </section>
+                        <?php }  ?></section>
                     </form>  
 
         </section>
@@ -207,9 +227,10 @@
                                 include 'articulo.php';
                                 ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
-                        </section>
+                        <?php }  ?></section>
                     </form>  
                     <hr>
             <IMG src="img/jumex.jpg"  align="left"  width="125" ><br>
@@ -221,9 +242,10 @@
                                 include 'articulo.php';
                                 ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
-                        </section>
+                        <?php }  ?></section>
                     </form>  
                     <hr>
             <IMG src="img/leche.jpg" align="left"  width="125" ><br>
@@ -235,9 +257,10 @@
                                 include 'articulo.php';
                                 ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
-                        </section>
+                        <?php }  ?></section>
                     </form>  
                     <hr>
             <IMG src="img/jugo.jpg"  align="left"  width="125" ><br>
@@ -249,9 +272,10 @@
                                 include 'articulo.php';
                                 ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
-                        </section>
+                        <?php }  ?></section>
                     </form>  
                     <hr>
             <IMG src="img/te.jpg"  width="125" align="left"><br>
@@ -263,9 +287,10 @@
                                 include 'articulo.php';
                                 ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
-                        </section>
+                        <?php }  ?></section>
                     </form>  
                 <hr>
 
@@ -278,9 +303,10 @@
                                 include 'articulo.php';
                                 ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
-                        </section>
+                        <?php }  ?></section>
                     </form>  
                     <hr>
 
@@ -293,11 +319,12 @@
                                 include 'articulo.php';
                                 ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                     </form>
-                </section>
-
+                
     <br>
 
         <section class="section-class-dulces">Dulces</section>
@@ -312,10 +339,12 @@
                                 include 'articulo.php';
                                 ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                     </form>
-                </section>
+                
                 <hr>
             <IMG src="img/lucas.jpg"  width="125" align="left"><br>
             <section class="class-info-a">
@@ -326,10 +355,12 @@
                                 include 'articulo.php';
                                 ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                     </form>
-                </section>
+                
                     <hr>
             <IMG src="img/pay.jpg"  width="125" align="left"><br>
             <section class="class-info-a">
@@ -340,10 +371,12 @@
                                 include 'articulo.php';
                                 ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                     </form>
-                </section>
+                
                 <hr>
             <IMG src="img/galletas.jpg"  width="140" align="left" class="alimentos"><br>
             <section class="class-info-a">
@@ -354,10 +387,12 @@
                                 include 'articulo.php';
                                 ?>
                         </p>
-                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
                         <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                     </form>
-                </section>
+                
                 <hr>
             <IMG src="img/gomitas.jpg"  width="130" align="left"><br>
             <section class="class-info-a">
@@ -368,10 +403,12 @@
                             include 'articulo.php';
                             ?>
                     </p>
-                    <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
-                    <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
+                        <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                 </form>
-            </section>
+            
             <hr>
             <IMG src="img/palomitas.jpg"  align="left"  width="150" height="130" ><br>
             <section class="class-info-a">
@@ -382,10 +419,12 @@
                             include 'articulo.php';
                             ?>
                     </p>
-                    <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
-                    <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
+                        <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                 </form>
-            </section>
+            
             <hr>
             <IMG src="img/pan dulce.jpg"  width="150" align="left" height="120"><br>
             <section class="class-info-a">
@@ -396,10 +435,12 @@
                             include 'articulo.php';
                             ?>
                     </p>
-                    <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
-                    <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
+                        <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                 </form>
-            </section>
+            
             <hr>
             <IMG src="img/cacahuates.jpg"  width="150" align="left" height="120"><br>
             <section class="class-info-a">
@@ -410,10 +451,12 @@
                             include 'articulo.php';
                             ?>
                     </p>
-                    <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
-                    <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
+                        <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                 </form>
-            </section>
+            
             <hr>
             <IMG src="img/papas.jpg"  width="150" align="left" height="120"><br>
             <section class="class-info-a">
@@ -424,10 +467,12 @@
                             include 'articulo.php';
                             ?>
                     </p>
-                    <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
-                    <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
+                        <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                 </form>
-            </section>
+            
             <hr>
             <IMG src="img/nieve.jpg"  width="150" align="left" height="120"><br>
             <section class="class-info-a">
@@ -438,10 +483,11 @@
                             include 'articulo.php';
                             ?>
                     </p>
-                    <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
-                    <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
+                        <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                 </form>
-            </section>
             <hr>
             <IMG src="img/chokis.jpg"  width="150" align="left" height="120"><br>
             <section class="class-info-a">
@@ -452,10 +498,12 @@
                             include 'articulo.php';
                             ?>
                     </p>
-                    <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
-                    <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
+                        <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                 </form>
-            </section>
+            
             <hr>
             <IMG src="img/orbit.jpg"  width="150" align="left" height="120"><br>
             <section class="class-info-a">
@@ -466,10 +514,12 @@
                             include 'articulo.php';
                             ?>
                     </p>
-                    <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
-                    <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
+                        <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                 </form>
-            </section>
+            
             <hr>
             <IMG src="img/bubbaloo.jpg"  width="150" align="left" height="120"><br>
             <section class="class-info-a">
@@ -480,10 +530,12 @@
                             include 'articulo.php';
                             ?>
                     </p>
-                    <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
-                    <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
+                        <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                 </form>
-            </section>
+            
             <hr>
             <IMG src="img/paleta.jpg"  width="150" align="left" height="120"><br>
             <section class="class-info-a">
@@ -494,10 +546,12 @@
                             include 'articulo.php';
                             ?>
                     </p>
-                    <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
-                    <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
+                        <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                 </form>
-            </section>
+            
             <hr>
             <IMG src="img/picafresa.jpg"  width="150" align="left" height="120"><br>
             <section class="class-info-a">
@@ -508,13 +562,15 @@
                             include 'articulo.php';
                             ?>
                     </p>
-                    <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>&">Editar</a></button>
-                    <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php if($rol == 'Administrador' ){ ?>
+                        <button class="editar"><a href="editar.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Editar</a></button>
+                        <button class="eliminar"><a href="elimina.php?id=<?php echo $id; ?>&nombre=<?php echo $nombre; ?>&descripcion=<?php echo $descr; ?>&=<?php echo $id; ?>&precio=<?php echo $precio; ?>">Eliminar</a></button>
+                        <?php }  ?></section>
                 </form>
-            </section>
+            
             <hr>
     </body>
     <?php
-        mysqli_close($conn)
+        mysqli_close($conn);
     ?>
 </html>

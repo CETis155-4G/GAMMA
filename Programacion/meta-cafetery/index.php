@@ -16,7 +16,7 @@
 
     <?php
         // Conectarse a la base de datos
-        $servername = "localhost:3307";
+        $servername = "localhost:4000";
         $username = "root";
         $password = "";
         $dbname = "sistema";
