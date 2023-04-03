@@ -18,21 +18,11 @@
     $precio = ($_GET['precio']);
 
     $sql = "DELETE from articulo where id_articulo='$id'";
-/*
+
     if (mysqli_query($conn, $sql)) {
-        echo "
-        <script> 
-            window.location='menu.php'
-            alert('Articulo eliminado');
-        </script>";
-        
-            
+        header('location:menu.php');
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
-*/
-?>
 
-<body>
-    Eliminacion Pendiente
-</body>
+?>
