@@ -1,6 +1,6 @@
 <?php
     session_start();
-    //error_reporting(0);
+    error_reporting(0);
     $user = $_SESSION['user'];
 ?>
 <!-- se usa para indicar que se usara html5  -->
@@ -18,7 +18,7 @@
 
     <?php
         // Conectarse a la base de datos
-        $servername = "localhost:4000";
+        $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "sistema";
@@ -54,7 +54,7 @@
         
         <?php if(!$user){ ?>
         <!-- se define un boton para enlazar las paginas --> 
-        <button class="registro"><a href="registro.html">Registrarse</a>
+        <button class="registro"><a href="registro.php">Registrarse</a>
         </button>   
 
         <button class="inicio"><a href="login.html">Iniciar Sesion</a>

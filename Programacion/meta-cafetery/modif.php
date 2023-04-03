@@ -1,6 +1,6 @@
 <?php
     // Conectarse a la base de datos
-    $servername = "localhost:4000";
+    $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "sistema";

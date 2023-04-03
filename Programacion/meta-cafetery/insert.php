@@ -1,7 +1,7 @@
 <?php
     session_start();
     // Conectarse a la base de datos
-    $servername = "localhost:4000";
+    $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "sistema";
@@ -36,6 +36,7 @@
         echo "<script> alert('se ha registrado con exito');
             window.location='index.php'</script>";
          
+        //header('location:index.php');
             
     } else {
         echo "Error: " . $insert . "<br>" . mysqli_error($conn);
