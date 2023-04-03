@@ -1,0 +1,176 @@
+body {
+    background-color:#E6E7EB;/* se define el color del fondo o cuerpo de la pagina */
+    font-family:Georgia, 'Times New Roman', Times, serif;/* se utilza para cambiar el tipo de letra */
+}
+
+
+
+
+.section-class-alimentos {
+    background:#18206F;
+    ;/* se define el color del fondo */
+    padding: 5px;/* se utiliza para establecer un area de relleno */
+    width: 1270px;/* se define la anchura de un elemento */
+    border-radius: 10px;/* se utiliza para redondear los bordes*/
+    text-align: center;/* utiliza para alinear el texto al centro */
+    position: relative;
+    left: 2%;
+    color: white;  
+}
+
+
+.section-class-bebidas {
+    background:#18206F;/* se define el color del fondo */
+    padding: 5px;/* se utiliza para establecer un area de relleno */
+    width: 1270px;/* se define la anchura de un elemento */
+    border-radius: 10px;/* se utiliza para redondear los bordes*/
+    text-align: center;/* se utiliza para centrar el texto */ 
+    position: relative;/* determina el punto de referencia donde se debe localizar cada elemento */ 
+    left: 2%;/* especifica la posicion de un elemento */  
+    color: white;/* utiliza para cambiar el color del texto */  
+}
+
+
+.section-class-dulces {
+    background:#18206F;/* se define el color del fondo */
+    padding: 5px;/* se utiliza para establecer un area de relleno */
+    width: 1270px;/* se define la anchura de un elemento */
+    border-radius: 10px;/* se utiliza para redondear los bordes*/
+    text-align: center;/* se utiliza para centrar el texto */  
+    position: relative;/* determina el punto de referencia donde se debe localizar cada elemento */  
+    left: 2%;/* especifica la posicion de un elemento */  
+    color: white;/* utiliza para cambiar el color del texto */  
+}
+
+.section-class-opciones-alimentos {
+    background: #D1D4DB;/* se define el color del fondo */
+    padding: 20px;/* se utiliza para establecer un area de relleno */
+    width: 1000px;/* se define la anchura de un elemento */
+    display: block;/*establece si un elemento se trata de bloque o en linea */
+    border-radius: 10px;/* se utiliza para redondear los bordes*/
+    margin: 0 auto;/* establece el area del margen*/
+    border-top: 5px solid #758ECD;/* se define el color del borde superior*/
+    border-bottom: 5px solid #758ECD;/* se define el color del borde inferior*/
+}
+
+.section-class-opciones-bebidas {
+    background:#D1D4DB;/* se define el color del fondo */
+    padding: 20px;/* se utiliza para establecer un area de relleno */
+    width: 1000px;/* se define la anchura de un elemento */
+    display: block;/*establece si un elemento se trata de bloque o en linea */
+    border-radius: 10px;/* se utiliza para redondear los bordes*/
+    margin: 0 auto;/* establece el area del margen*/
+    border-top: 5px solid #758ECD;/* se define el color del borde superior*/
+    border-bottom: 5px solid #758ECD;/* se define el color del borde inferior*/
+}
+
+.section-class-opciones-dulces {
+    background:#D1D4DB;/* se define el color del fondo */
+    padding: 20px;/* se utiliza para establecer un area de relleno */
+    width: 1000px;/* se define la anchura de un elemento */
+    display: block;/*establece si un elemento se trata de bloque o en linea */
+    border-radius: 10px;/* se utiliza para redondear los bordes*/
+    margin: 0 auto;/* establece el area del margen*/
+    border-top: 5px solid #758ECD;/* se define el color del borde superior*/
+    border-bottom: 5px solid #758ECD;/* se define el color del borde inferior*/
+}
+
+
+.section-class-menu {
+    font-size: 23px;/* se utiliza para cambiar el tamaño de la letra */
+    text-align: center;/* se utiliza para alinear el texto */
+    color: black;/* se utiliza para cambiar el color de la letra */
+    font-family:Georgia, 'Times New Roman', Times, serif;/* se utilza para cambiar el tipo de letra */
+}
+
+
+
+.class-info-a {
+    font-size: 17px;/* se utiliza para cambiar el tamaño de la letra */
+    color:black; /* se utiliza para cambiar el color de la letra */ 
+    padding: 10px; /* se utiliza para establecer un area de relleno */
+    width: 100%;/* se define la anchura de un elemento */
+    border-radius: 3px; /* se utiliza para redondear los bordes*/
+    position: relative;/* determina la ubicacion de el elemento*/
+    right: -25%;/* se utiliza para posicionar un elemento */
+    text-align: justify;/* se utiliza para alinear el texto */
+}
+
+
+nav {
+    text-align: center;
+    background-color: #17255A;/* se define el color del fondo */
+    color: white;/* se utiliza para cambiar el color de la letra */
+    padding: 16px;/* se utiliza para establecer un area de relleno */
+    margin: -10px;
+}
+
+nav img {
+    float: left;
+    left: 7%;/* especifica la parte de la poscicion de un elemento, en este caso a la derecha*/
+    bottom: 85%;/* especifica la parte de la poscicion de un elemento, en este caso en el centro*/
+}
+
+img {
+    position: absolute;/* se utiliza para posicionar un elemento */
+}
+
+
+
+.registro{
+    text-decoration: none;/* utiliza para quitar la apariencia de las lineas decorativas del texto */
+    font-size: 20px;/* se utiliza para cambiar el tamaño de la letra */
+    color :black;
+    background-color:white ;/* se define el color del fondo */
+    border-radius: 10px;/* se utiliza para redondear los bordes*/ 
+    cursor: pointer;/* se utiliza para mostrar cuando el puntero del mouse esta sobre un elemento*/
+    position: absolute;/*el elemento se coloca absolutamente en su primer padre posicionado*/
+    right: 16%;/* especifica la parte de la poscicion de un elemento, en este caso a la derecha*/
+    bottom: 89%;/* especifica la parte de la poscicion de un elemento, en este caso en el centro*/
+    padding: 7px;
+}
+
+
+.inicio{
+    text-decoration: none;/* utiliza para cambiar la apariencia de las lineas decorativas del texto */
+    font-size: 20px;/* se utiliza para cambiar el tamaño de la letra */
+    color: black;/* se utiliza para cambiar el color de la letra */
+    background-color:white ;/* se define el color del fondo */
+    border-radius: 10px;/* se utiliza para redondear los bordes*/
+    cursor: pointer;/* se utiliza para mostrar cuando el puntero del mouse esta sobre un elemento*/
+    position: absolute;/*el elemento se coloca absolutamente en su primer padre posicionado*/
+    right: 3%;/* especifica la parte de la poscicion de un elemento, en este caso a la derecha*/
+    bottom: 89%;/* especifica la parte de la poscicion de un elemento, en este caso en el centro*/
+    padding: 7px;
+}
+
+
+a {
+    text-decoration: none;/* utiliza para cambiar la apariencia de las lineas decorativas del texto */
+}
+
+.editar {
+    background-color: white;
+    border-radius: 10px;/* se utiliza para redondear los bordes*/
+    cursor: pointer;/* se utiliza para mostrar cuando el puntero del mouse esta sobre un elemento*/
+    text-decoration: none;/* utiliza para cambiar la apariencia de las lineas decorativas del texto */
+    font-size: 15px;/* se utiliza para cambiar el tamaño de la letra */
+    color: black;/* se utiliza para cambiar el color de la letra */
+    border-color: #17255A;
+    right: 80%;/* especifica la parte de la poscicion de un elemento, en este caso a la derecha*/
+    bottom: -20%;/* especifica la parte de la poscicion de un elemento, en este caso en el centro*/
+    padding: 5px;
+}
+
+.eliminar {
+    background-color: white;
+    border-radius: 10px;/* se utiliza para redondear los bordes*/
+    cursor: pointer;/* se utiliza para mostrar cuando el puntero del mouse esta sobre un elemento*/
+    text-decoration: none;/* utiliza para cambiar la apariencia de las lineas decorativas del texto */
+    font-size: 15px;/* se utiliza para cambiar el tamaño de la letra */
+    color: black;/* se utiliza para cambiar el color de la letra */
+    border-color: #17255A;
+    right: 30%;/* especifica la parte de la poscicion de un elemento, en este caso a la derecha*/
+    bottom: -20%;/* especifica la parte de la poscicion de un elemento, en este caso en el centro*/
+    padding: 5px;
+}

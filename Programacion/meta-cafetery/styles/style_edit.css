@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body{
+    background-color:#E6E7EB;
+}
+
+.edit{
+    width: 400px;
+    background: #FFFFFF;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius:10px;
+    font-family: 'arial';
+    box-shadow: 7px 13px 37px #423d3d;
+    color:black;
+    border-top: 4px solid #17255A;
+
+}
+
+.controlls {
+    width: 100%;
+    background:#D1D4DB;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: none;
+    font-family: 'arial';
+    font-size: 18px;
+    color: #757A80;
+}
+
+.edit h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.guardar{
+    width: 100%;
+    background: #18206F;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    border-radius:10px;
+    cursor: pointer;/* se utiliza para mostrar cuando el puntero del mouse esta sobre un elemento*/
+}
+
+nav {
+    text-align: center;
+    background-color: #17255A;/* se define el color del fondo */
+    color: white;/* se utiliza para cambiar el color de la letra */
+    padding: 16px;/* se utiliza para establecer un area de relleno */
+    margin: -10px;
+}
+
+nav img {
+    float: left;
+    left: 7%;/* especifica la parte de la poscicion de un elemento, en este caso a la derecha*/
+    bottom: 85%;/* especifica la parte de la poscicion de un elemento, en este caso en el centro*/
+}
+
+.inicio{
+    text-decoration: none;/* utiliza para cambiar la apariencia de las lineas decorativas del texto */
+    font-size: 20px;/* se utiliza para cambiar el tamaño de la letra */
+    color: black;/* se utiliza para cambiar el color de la letra */
+    background-color:white ;/* se define el color del fondo */
+    border-radius: 10px;/* se utiliza para redondear los bordes*/
+    cursor: pointer;/* se utiliza para mostrar cuando el puntero del mouse esta sobre un elemento*/
+    position: absolute;/*el elemento se coloca absolutamente en su primer padre posicionado*/
+    right: 3%;/* especifica la parte de la poscicion de un elemento, en este caso a la derecha*/
+    bottom: 89%;/* especifica la parte de la poscicion de un elemento, en este caso en el centro*/
+    padding: 7px;
+}
+
+.registro{
+    text-decoration: none;/* utiliza para quitar la apariencia de las lineas decorativas del texto */
+    font-size: 20px;/* se utiliza para cambiar el tamaño de la letra */
+    color :black;
+    background-color:white ;/* se define el color del fondo */
+    border-radius: 10px;/* se utiliza para redondear los bordes*/ 
+    cursor: pointer;/* se utiliza para mostrar cuando el puntero del mouse esta sobre un elemento*/
+    position: absolute;/*el elemento se coloca absolutamente en su primer padre posicionado*/
+    right: 16%;/* especifica la parte de la poscicion de un elemento, en este caso a la derecha*/
+    bottom: 89%;/* especifica la parte de la poscicion de un elemento, en este caso en el centro*/
+    padding: 7px;
+}

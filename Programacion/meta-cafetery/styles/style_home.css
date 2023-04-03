@@ -1,0 +1,77 @@
+
+.registro{
+    text-decoration: none;/* utiliza para quitar la apariencia de las lineas decorativas del texto */
+    font-size: 20px;/* se utiliza para cambiar el tamaño de la letra */
+    color: black;/* se utiliza para cambiar el color de la letra */
+    background-color:white ;/* se define el color del fondo */
+    border-radius: 10px;/* se utiliza para redondear los bordes*/ 
+    cursor: pointer;/* se utiliza para mostrar cuando el puntero del mouse esta sobre un elemento*/
+    position: absolute;/*el elemento se coloca absolutamente en su primer padre posicionado*/
+    right: 15%;/* especifica la parte de la poscicion de un elemento, en este caso a la derecha*/
+    bottom: 89%;/* especifica la parte de la poscicion de un elemento, en este caso en el centro*/
+    padding: 7px;
+}
+
+
+.inicio{
+    text-decoration: none;/* utiliza para cambiar la apariencia de las lineas decorativas del texto */
+    font-size: 20px;/* se utiliza para cambiar el tamaño de la letra */
+    color: black;/* se utiliza para cambiar el color de la letra */
+    background-color:white ;/* se define el color del fondo */
+    border-radius: 10px;/* se utiliza para redondear los bordes*/
+    cursor: pointer;/* se utiliza para mostrar cuando el puntero del mouse esta sobre un elemento*/
+    position: absolute;/*el elemento se coloca absolutamente en su primer padre posicionado*/
+    right: 3%;/* especifica la parte de la poscicion de un elemento, en este caso a la derecha*/
+    bottom: 89%;/* especifica la parte de la poscicion de un elemento, en este caso en el centro*/
+    padding: 7px;
+}
+
+.menu{
+    text-decoration: none;/* utiliza para quitar la apariencia de las lineas decorativas del texto */
+    font-size: 20px;/* se utiliza para cambiar el tamaño de la letra */
+    color: black;/* se utiliza para cambiar el color de la letra */
+    background-color:white ;/* se define el color del fondo */
+    border-radius: 10px;/* se utiliza para redondear los bordes*/ 
+    cursor: pointer;/* se utiliza para mostrar cuando el puntero del mouse esta sobre un elemento*/
+    position: absolute;/*el elemento se coloca absolutamente en su primer padre posicionado*/
+    right: 26%;/* especifica la parte de la poscicion de un elemento, en este caso a la derecha*/
+    bottom: 89%;/* especifica la parte de la poscicion de un elemento, en este caso en el centro*/
+    padding: 7px;
+}
+
+nav {
+    text-align: center;
+    background-color: #17255A;/* se define el color del fondo */
+    color: white;/* se utiliza para cambiar el color de la letra */
+    padding: 16px;/* se utiliza para establecer un area de relleno */
+    margin: -10px;
+}
+
+nav img {
+    float: left;
+    left: 7%;/* especifica la parte de la poscicion de un elemento, en este caso a la derecha*/
+    bottom: 85%;/* especifica la parte de la poscicion de un elemento, en este caso en el centro*/
+}
+
+img {
+    position: absolute;/* se utiliza para posicionar un elemento */
+}
+
+
+
+
+body {
+    background-color:#E6E7EB;/* se define el color del fondo o cuerpo de la pagina */
+    font-family:Georgia, 'Times New Roman', Times, serif;/* se utilza para cambiar el tipo de letra */
+}
+
+
+a {
+    text-decoration: none;/* utiliza para cambiar la apariencia de las lineas decorativas del texto */
+    color: black;/* se utiliza para cambiar el color de la letra */
+}
+
+.logo{
+    margin-left: 32%;
+
+}

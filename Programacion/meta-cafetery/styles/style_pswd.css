@@ -1,0 +1,78 @@
+/*color de fondo*/
+body{
+    background-color: #E6E7EB;
+    font-family: "arial";
+}
+
+/*margen del cuerpo*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*cuadro donde van los campos*/
+.recuperacion-contraseña{
+    width: 400px;
+    height: 340px;
+    background: #FFFFFF;
+    margin: auto;
+    margin-top: 180px;
+    font-family: 'arial';
+    box-shadow: 7px 13px 37px #665d5d;
+    padding: 20px 30px;
+    border-top: 4px solid #17255A;
+    color: black;
+    border-radius:10px;
+
+    
+}
+
+.recuperacion-contraseña a {
+    color: black;
+    text-decoration: none;
+}
+  
+.recuperacion-contraseña a:hover {
+    color: #758ECD;
+    text-decoration: underline;
+}
+
+
+/*recuadros de los campos */
+.controls {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    background: #D1D4DB;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius:10px;
+}
+
+/*configuraciones de los botones*/
+.botons {
+    width: 100%;
+    height: 40px;
+    background: #18206F;
+    border: none;
+    color: white;
+    margin-bottom: 16px;
+    border-radius:10px;
+    cursor: pointer;/* se utiliza para mostrar cuando el puntero del mouse esta sobre un elemento*/
+}
+
+/*editar los parrafos*/
+p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}
+/*editar los enlaces*/
+a {
+    color:#758ECD;
+    text-decoration: none;
+}
+
